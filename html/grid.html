@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 300px auto;
+            grid-template-rows: 150px 400px 150px;
+            grid-template-areas:
+                "header header"
+                "aside main"
+                "footer footer";
+            width: 800px;
+            padding: 15px;
+            background-color: antiquewhite;
+
+            header,
+            aside,
+            main,
+            footer{
+                background-color: rgb(148,209,211);
+            }
+            header{
+                background-color: rebeccapurple;
+                grid-area: header;
+            }
+            aside {
+                background-color: red;
+                grid-area: aside;
+            }
+            main {
+                background-color: darkmagenta;
+                grid-area: main;
+            }
+        }
+        @media (max-width: 768px){
+            .container{
+                grid-template-areas:
+                    "footer footer"
+                    "main main"
+                    "header header"
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        <aside></aside>
+        <main></main>
+        <footer></footer>
+    </div>
+    
+</body>
+</html>
